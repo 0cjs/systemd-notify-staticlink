@@ -1,4 +1,9 @@
-all: justnotifyd justnotifyd.static
+BINS = justnotifyd justnotifyd.static
+
+all: ${BINS}
+
+clean:
+	rm -f ${BINS}
 
 justnotifyd: justnotifyd.c Makefile
 	cc -o $@ $< -lsystemd
